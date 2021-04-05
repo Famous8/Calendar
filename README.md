@@ -1,5 +1,5 @@
-# calendar
-A Simple, Open Source Calend
+# Calendar
+A Simple, Open Source Calendar
 
 # Why is this Calendar different?
 - Privacy is our first priority, your data is stored locally on your own device, nowhere else.
