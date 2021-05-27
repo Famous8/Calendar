@@ -29,7 +29,7 @@ import threading
 
 
 
-APIKEY = '259ddcb11156c1648597938984b52919f458ec88e45a6364276e863b3289aadd'
+APIKEY = 'Top Secret'
 
 kv = """
 <WorldEvents>:
