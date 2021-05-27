@@ -9,5 +9,7 @@ A Simple, Open Source Calendar
 - We have multiple features that will be helpful for Muslims. Such as, Islamic Dates, Islamic Events, and Salaat Times.
 - This Calendar is open source, and you can contribute ideas and functions to it too!
 
+
+If you're running the app, make sure to use the master of KivyMD: https://github.com/kivymd/KivyMD/archive/master.zip and my fork of kivy: https://github.com/Famous8/kivy
 # Get the Calendar soon on the Google Play Store!
 
