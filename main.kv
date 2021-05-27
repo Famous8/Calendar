@@ -1,0 +1,198 @@
+#:import MDDropdownMenu kivymd.uix.menu
+#:import Clock kivy.clock.Clock
+
+<MyAppBar>:
+    BoxLayout:
+        orientation: 'vertical'
+        MDToolbar:
+            title: "Calendar"
+            elevation: 10
+            left_action_items: [['menu', lambda x: app.root.ids.nav_drawer.set_state('toggle')]]
+
+        Widget:
+
+
+<ItemDrawer>:
+    theme_text_color: "Custom"
+    on_release: self.parent.set_color_item(self)
+
+    IconLeftWidget:
+        id: icon
+        icon: root.icon
+        theme_text_color: "Custom"
+        text_color: root.text_color
+
+<ListItem>:
+    theme_text_color: "Custom"
+
+    IconLeftWidget:
+        id: icon
+        icon: root.icon
+        theme_text_color: "Custom"
+        text_color: root.text_color
+
+<ContentNavigationDrawer>:
+    orientation: "vertical"
+    padding: "8dp"
+    spacing: "8dp"
+
+    AnchorLayout:
+        anchor_x: "left"
+        size_hint_y: None
+        height: "300dp"
+
+        Image:
+            id: avatar
+            size_hint: 1, 1
+            source: "./lib/assets/calendar.png"
+
+    ScrollView:
+
+        DrawerList:
+            id: md_list
+
+            ItemDrawer:
+                text: "Home"
+                icon: "home"
+                on_release:
+                    app.root.ids.sm.current = "home"
+                    app.root.ids.nav_drawer.set_state('close')
+
+            ItemDrawer:
+                text: "Settings"
+                icon: "cog"
+                on_release:
+                    app.root.ids.sm.current = "settings_"
+                    app.root.ids.nav_drawer.set_state('close')
+
+            ItemDrawer:
+                text: "About"
+                icon: "information"
+                on_release:
+                    app.root.ids.sm.current = "about"
+                    app.root.ids.nav_drawer.set_state('close')
+
+
+
+Screen:
+    MyAppBar
+    MDNavigationLayout:
+        MyScreenManager:
+            id: sm
+
+            Home:
+                id: home
+
+            Settings_:
+                id: settings_
+
+            About:
+                id: about
+
+            EventChooser:
+                id: chooser
+
+        MDNavigationDrawer:
+            id: nav_drawer
+            ContentNavigationDrawer:
+                id: content_drawer
+
+
+<Home>:
+    name: "home"
+    id: home
+    BoxLayout:
+        id: main
+        orientation: 'vertical'
+        Widget:
+            size_hint_y: .09
+
+    MDFloatingActionButtonSpeedDial:
+        data: {"Add Event": "calendar"}
+        root_button_anim: True
+        callback: app.callback
+
+
+<Settings_>:
+    name: "settings_"
+    Widget:
+
+    BoxLayout:
+        orientation: "vertical"
+        size_hint_y: .9
+
+        MDLabel:
+            text: "General"
+            font_size: "25px"
+            padding_x: 10
+            theme_text_color: "Custom"
+            size_hint_y: .1
+            text_color: app.theme_cls.primary_color
+
+        OneLineListItem:
+            text: "Change Theme"
+            on_release: app.theme_dialog.open()
+
+        OneLineListItem:
+            text: "Change View"
+            on_release: app.viewdialog.open()
+
+        MDLabel:
+            text: "Notifications"
+            font_size: "25px"
+            padding_x: 10
+            size_hint_y: .1
+            theme_text_color: "Custom"
+            text_color: app.theme_cls.primary_color
+
+        OneLineListItem:
+            text: "Coming Soon"
+
+        MDLabel:
+            text: "Other"
+            font_size: "25px"
+            size_hint_y: .1
+            padding_x: 10
+            theme_text_color: "Custom"
+            text_color: app.theme_cls.primary_color
+
+        OneLineListItem:
+            text: "Coming Soon"
+
+        Widget
+
+
+
+
+<About>:
+    name: "about"
+    BoxLayout:
+        orientation: "vertical"
+        Widget:
+            size_hint_y: .09
+
+        MDList:
+            ListItem:
+                icon: "information"
+                text: "Licensing"
+                on_release: app.licensedialog.open()
+
+            ListItem:
+                icon: "dots-horizontal"
+                text: "More Info"
+                on_release: app.infodialog.open()
+
+        Widget
+
+
+<ItemConfirm>
+    on_release: root.set_icon(check)
+
+    CheckboxLeftWidget:
+        id: check
+        group: "check"
+
+
+<ListItemWithSwitch>:
+    RightSwitch:
+

@@ -1,0 +1,22 @@
+This app was Created by Zain Raza with Kivy and KivyMD
+
+Special Thanks to the creators of Kivy and KivyMD and to anyone who helped along the way.
+
+Python Libraries used:
+    Kivy
+    KivyMD
+    datetime
+    calendar
+    json
+    hijri_converter
+    requests
+    aiohttp
+    asyncio
+
+APIs used:
+    calendarific
+    api.ipinfodb
+    aladhan
+    api.ipify
+
+You can find the source code on my github: https://github.com/famous8/calendar
