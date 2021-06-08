@@ -7,7 +7,7 @@ title = World Calendar
 package.name = world_calendar
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = com.zainraza.calendar
+package.domain = com.zainraza
 
 # (str) Source code where the main.py live
 source.dir = .
