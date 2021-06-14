@@ -11,5 +11,6 @@ A Simple, Open Source Calendar
 
 
 If you're running the app, make sure to use the master of KivyMD: https://github.com/kivymd/KivyMD/archive/master.zip and my fork of kivy: https://github.com/Famous8/kivy
-# Get the Calendar soon on the Google Play Store!
 
+# Get the Calendar on the Google Play Store!
+https://play.google.com/store/apps/details?id=com.zainraza.calendar.world_calendar
